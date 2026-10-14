@@ -47,9 +47,9 @@ fun NexoraApp(vm:CompanionViewModel) {
     LaunchedEffect(route){vm.screen(route)}
     LaunchedEffect(state.message){state.message?.let { snackbar.showSnackbar(it); vm.dismissMessage() }}
     Scaffold(topBar={TopAppBar(title={Column { Text("NEXORA",fontWeight=FontWeight.Bold); Text("The Beauty Growth Network",style=MaterialTheme.typography.labelSmall) }},navigationIcon={if(route.startsWith("template/")) IconButton(onClick={nav.popBackStack()}){Icon(Icons.AutoMirrored.Filled.ArrowBack,"Back")}},actions={IconButton(onClick={open(Links.HOME)}){Icon(Icons.AutoMirrored.Filled.OpenInNew,"Open website")}})},snackbarHost={SnackbarHost(snackbar)},bottomBar={NavigationBar {
-        listOf(Triple("home","Home",Icons.Default.Home),Triple("templates","Templates",Icons.Default.Dashboard),Triple("profile","Profile",Icons.Default.Person),Triple("settings","Settings",Icons.Default.Settings)).forEach { (destination,label,icon) -> NavigationBarItem(selected=route==destination,onClick={nav.navigate(destination){popUpTo(nav.graph.findStartDestination().id){saveState=true};launchSingleTop=true;restoreState=true}},icon={Icon(icon,null)},label={Text(label)}) }
+        listOf(Triple("home","Home",Icons.Default.Home),Triple("templates","Templates",Icons.Default.Dashboard),Triple("profile","Profile",Icons.Default.Person),Triple("settings","Settings",Icons.Default.Settings)).forEach { (destination,label,icon) -> NavigationBarItem(selected=route==destination||(destination=="templates"&&route.startsWith("template/")),onClick={nav.navigate(destination){popUpTo(nav.graph.findStartDestination().id){saveState=true};launchSingleTop=true;restoreState=true}},icon={Icon(icon,null)},label={Text(label)}) }
     }}) { padding ->
-        Column(Modifier.fillMaxSize().padding(padding)) {
+        Column(Modifier.fillMaxSize().padding(padding).imePadding()) {
             if(state.busy) LinearProgressIndicator(Modifier.fillMaxWidth())
             NavHost(nav,startDestination="home",modifier=Modifier.weight(1f)) {
                 composable("home"){HomeScreen(open,{nav.navigate("templates")})}
@@ -101,12 +101,21 @@ private fun AuthScreen(vm:CompanionViewModel,state:CompanionState) {
         item { OutlinedTextField(email,{email=it},label={Text("Email")},keyboardOptions=KeyboardOptions(keyboardType=KeyboardType.Email),singleLine=true,modifier=Modifier.fillMaxWidth()) }
         if(recovery)item { OutlinedTextField(code,{code=it},label={Text("Recovery code from email")},singleLine=true,modifier=Modifier.fillMaxWidth()) }
         item { OutlinedTextField(password,{password=it},label={Text(if(recovery)"New password" else "Password")},visualTransformation=PasswordVisualTransformation(),keyboardOptions=KeyboardOptions(keyboardType=KeyboardType.Password),singleLine=true,modifier=Modifier.fillMaxWidth()) }
-        item { Button(enabled=vm.configured&&!state.busy&&email.contains('@')&&password.length>=8,onClick={if(recovery)vm.reset(email,code,password) else if(signup)vm.signUp(email,password) else vm.signIn(email,password)},modifier=Modifier.fillMaxWidth()){Text(if(recovery)"Set new password" else if(signup)"Create account" else "Sign in")} }
+        item { Button(enabled=vm.configured&&!state.busy&&email.contains('@')&&(password.length>=8||(!signup&&!recovery&&password.isNotEmpty())),onClick={if(recovery)vm.reset(email,code,password) else if(signup)vm.signUp(email,password) else vm.signIn(email,password)},modifier=Modifier.fillMaxWidth()){Text(if(recovery)"Set new password" else if(signup)"Create account" else "Sign in")} }
         item { TextButton(onClick={signup=!signup;recovery=false}){Text(if(signup)"Already registered? Sign in" else "Create an account")};TextButton(enabled=vm.configured&&!state.busy,onClick={recovery=true;vm.recover(email)}){Text(if(recovery)"Resend recovery email" else "Forgot password?")};if(recovery)TextButton(onClick={recovery=false}){Text("Back to sign in")} }
     }
 }
 @Composable
 private fun ProfileScreen(vm:CompanionViewModel,state:CompanionState) {
+    if(!state.profileReady) {
+        Column(Modifier.fillMaxWidth().padding(24.dp),verticalArrangement=Arrangement.spacedBy(16.dp)) {
+            Text("Loading your private profile…",style=MaterialTheme.typography.titleLarge)
+            Text("If loading fails, check your connection and retry.")
+            OutlinedButton(enabled=!state.busy,onClick={vm.reload()}){Text("Retry profile load")}
+            TextButton(enabled=!state.busy,onClick={vm.signOut()}){Text("Sign out")}
+        }
+        return
+    }
     val context=LocalContext.current
     var name by rememberSaveable(state.session?.userId){mutableStateOf(state.profile.name)}
     LaunchedEffect(state.profile.name){name=state.profile.name}

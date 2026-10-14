@@ -15,7 +15,7 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.tasks.await
 import org.json.JSONArray
 
- data class CompanionState(val session: Session?=null, val profile: Profile=Profile(), val photoUrl: String?=null, val documents: List<DocumentRecord> = emptyList(), val busy: Boolean=false, val message: String?=null, val consent: Consent=Consent())
+ data class CompanionState(val session: Session?=null, val profile: Profile=Profile(), val photoUrl: String?=null, val documents: List<DocumentRecord> = emptyList(), val busy: Boolean=false, val profileReady: Boolean=false, val message: String?=null, val consent: Consent=Consent())
 class CompanionViewModel(app: Application) : AndroidViewModel(app) {
     private val container=(app as NexoraApplication).container
     private val repo=container.repository
@@ -29,7 +29,7 @@ class CompanionViewModel(app: Application) : AndroidViewModel(app) {
     init {
         viewModelScope.launch { container.preferences.consent.collect { value -> mutable.update { it.copy(consent=value) } } }
         viewModelScope.launch { repo.session.collectLatest { session ->
-            mutable.update { it.copy(session=session,profile=Profile(),photoUrl=null,documents=emptyList()) }
+            mutable.update { it.copy(session=session,profile=Profile(),photoUrl=null,documents=emptyList(),profileReady=false) }
             if(session!=null) {
                 try { refreshProfile(); if(container.preferences.consent.value.notifications) PushSyncWorker.enqueue(app) }
                 catch(e: CancellationException){throw e} catch (_:Exception){ mutable.update { it.copy(message="Profile could not load. Check connection and retry.") } }
@@ -40,7 +40,7 @@ class CompanionViewModel(app: Application) : AndroidViewModel(app) {
         val uid=repo.session.value?.userId ?: return
         val p=repo.profile(); val docs=repo.documents()
         val photo=if(p.photoPath.isNotBlank()) repo.signedUrl(p.photoPath,true) else null
-        if(repo.session.value?.userId==uid) mutable.update { it.copy(profile=p,documents=docs,photoUrl=photo) }
+        if(repo.session.value?.userId==uid) mutable.update { it.copy(profile=p,documents=docs,photoUrl=photo,profileReady=true) }
     }
     private fun action(block:suspend ()->String?) {
         if(mutable.value.busy)return
