@@ -26,3 +26,7 @@ Publish `dist/` as the static output directory. Each route includes its own `ind
 ## Backend status
 
 This is the existing static website. It has no connected database, SQL migrations, server-side authentication or payment backend. External service links remain as in the original Site. No production database records or credentials are included.
+
+## Studioflow template collection
+
+The home and Templates page now use all 14 templates from [Studioflow](https://github.com/templateapp67-oss/studioflow). Catalogue metadata and sample services were sourced from `src/categoryTemplates.ts` (blob `0885fe5c9c94578c83e65ff7b30a5a7ef8bc7bb6`). The original 28-template collection has been replaced. Template detail dialogs show source covers, palettes and sample service menus. The Use in Studioflow button opens the Studioflow builder; sign in and choose the matching template there. No automatic cross-site template selection or account transfer is implemented.

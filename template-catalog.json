@@ -1,338 +1,632 @@
 [
   {
-    "id": "vip_black_gold",
-    "name": "VIP Black & Gold — All-Purpose Signature",
-    "category": "hair",
-    "description": "VIP Black & Gold is Nexora’s all-purpose premium website design. Its onyx-and-champagne-gold visual system adapts to your own services, team, photos, offers and booking settings—whether you run a salon, barber shop, spa, skin clinic, nail studio, tattoo studio or wellness business.",
-    "tagline": "An all-purpose premium experience for beauty, grooming, wellness and signature services",
-    "thumbnailUrl": "https://fanal-templetes-app.vercel.app/assets/luxury_spa_service_1780900684934-CE01AH2r.png",
-    "isVip": true,
-    "previewUrl": "https://fanal-templetes-app.vercel.app/templates/vip_black_gold/preview",
-    "customizeUrl": "https://fanal-templetes-app.vercel.app/editor?templateId=vip_black_gold",
-    "image": "/assets/templates/vip_black_gold.webp"
-  },
-  {
     "id": "hair_salon",
-    "name": "Hair & Styling Studio",
+    "name": "Hair Cut & Styling Studio",
+    "businessName": "Miraki Hair Cut & Styling Studio",
     "category": "hair",
-    "description": "Welcome to our studio. We bring together master precision haircuts, bespoke balayage, sculpted gel nail art, and restorative hair spa therapies in a modern luxury sanctuary.",
-    "tagline": "Precision Cuts, Creative Hair Artistry & Luxury Salon Lounge",
-    "thumbnailUrl": "https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80",
-    "isVip": false,
-    "previewUrl": "https://fanal-templetes-app.vercel.app/templates/hair_salon/preview",
-    "customizeUrl": "https://fanal-templetes-app.vercel.app/editor?templateId=hair_salon",
-    "image": "/assets/templates/hair_salon.webp"
+    "description": "Located in the vibrant heart of Indiranagar, Miraki is Bengaluru’s premier minimalist hair craft studio. We specialize in precision dry cuts, structural bobs, international styling, and restorative keratin smoothing using cruelty-free botanical formulas.",
+    "tagline": "Precision Cuts, Modern Geometry & High-Fashion Hair Artistry",
+    "palette": "Slate & Silver Theme",
+    "layout": "modern_minimalist",
+    "image": "/assets/templates/hair_salon.webp",
+    "customizeUrl": "https://nexora-one-white-label.templateapp67.chatgpt.site/",
+    "sourceRepository": "https://github.com/templateapp67-oss/studioflow",
+    "services": [
+      {
+        "name": "Master Stylist Precision Cut & Blowdry",
+        "price": 750,
+        "durationMinutes": 45,
+        "category": "Precision Cuts"
+      },
+      {
+        "name": "Classic Layered Cut & Argan Wash",
+        "price": 450,
+        "durationMinutes": 35,
+        "category": "Precision Cuts"
+      },
+      {
+        "name": "Formaldehyde-Free Keratin Smoothing",
+        "price": 4200,
+        "durationMinutes": 120,
+        "category": "Keratin & Botox"
+      },
+      {
+        "name": "Hair Botox Deep Fiber Reconstruction",
+        "price": 3600,
+        "durationMinutes": 90,
+        "category": "Keratin & Botox"
+      },
+      {
+        "name": "Red-Carpet Tong Curls & High-Volume Waves",
+        "price": 850,
+        "durationMinutes": 40,
+        "category": "Thermal Styling"
+      }
+    ]
   },
   {
     "id": "barber",
-    "name": "The Royal Blade Barber & Men's Club",
+    "name": "Barber Shop / Men's Grooming",
+    "businessName": "The Royal Blade Barber & Men's Club",
     "category": "barber",
     "description": "Situated on Bandra’s iconic 33rd Road, The Royal Blade revives the timeless charm of Victorian barbershops infused with vintage mahogany, genuine brass fittings, and old-school hot towel straight razor mastery.",
     "tagline": "Vintage Heritage Shaves, Bespoke Fades & Handcrafted Beard Sculpting",
-    "thumbnailUrl": "https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=1200&q=80",
-    "isVip": false,
-    "previewUrl": "https://fanal-templetes-app.vercel.app/templates/barber/preview",
-    "customizeUrl": "https://fanal-templetes-app.vercel.app/editor?templateId=barber",
-    "image": "/assets/templates/barber.webp"
+    "palette": "Dark Wood & Brass Theme",
+    "layout": "vintage_industrial",
+    "image": "/assets/templates/barber.webp",
+    "customizeUrl": "https://nexora-one-white-label.templateapp67.chatgpt.site/",
+    "sourceRepository": "https://github.com/templateapp67-oss/studioflow",
+    "services": [
+      {
+        "name": "Executive Scissor Cut & Charcoal Hair Wash",
+        "price": 450,
+        "durationMinutes": 40,
+        "category": "Executive Cuts"
+      },
+      {
+        "name": "Signature Hot Towel Straight Razor Shave",
+        "price": 350,
+        "durationMinutes": 30,
+        "category": "Hot Towel Shaves"
+      },
+      {
+        "name": "Precision Beard Sculpting & Ozone Steam",
+        "price": 400,
+        "durationMinutes": 35,
+        "category": "Beard Sculpting"
+      },
+      {
+        "name": "The Royal Maharaja Grooming Ritual",
+        "price": 1350,
+        "durationMinutes": 75,
+        "category": "Maharaja Packages"
+      },
+      {
+        "name": "Grey Camo Beard Toning & Mustache Wax",
+        "price": 550,
+        "durationMinutes": 30,
+        "category": "Beard Sculpting"
+      }
+    ]
   },
   {
     "id": "unisex_salon",
-    "name": "Aura Unisex Salon & Wellness Lounge",
+    "name": "Unisex Salon",
+    "businessName": "Aura Unisex Salon & Wellness Lounge",
     "category": "hair",
     "description": "Aura Unisex Salon offers a balanced, contemporary space in Koramangala. Designed for modern professionals and families seeking premium hair services, de-tan treatments, and express grooming under one roof.",
     "tagline": "Harmonious Beauty, Contemporary Hair & Inclusive Self-Care",
-    "thumbnailUrl": "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=1200&q=80",
-    "isVip": false,
-    "previewUrl": "https://fanal-templetes-app.vercel.app/templates/unisex_salon/preview",
-    "customizeUrl": "https://fanal-templetes-app.vercel.app/editor?templateId=unisex_salon",
-    "image": "/assets/templates/unisex_salon.webp"
+    "palette": "Warm Neutral & Pastel Pink/Grey",
+    "layout": "contemporary_balanced",
+    "image": "/assets/templates/unisex_salon.webp",
+    "customizeUrl": "https://nexora-one-white-label.templateapp67.chatgpt.site/",
+    "sourceRepository": "https://github.com/templateapp67-oss/studioflow",
+    "services": [
+      {
+        "name": "Designer Unisex Haircut & Moroccan Conditioning",
+        "price": 650,
+        "durationMinutes": 45,
+        "category": "Unisex Haircuts"
+      },
+      {
+        "name": "Express Glow Organic Cleanup & De-Tan",
+        "price": 850,
+        "durationMinutes": 40,
+        "category": "Skin Cleanups"
+      },
+      {
+        "name": "Global Ammonia-Free Inoa Hair Color",
+        "price": 2800,
+        "durationMinutes": 90,
+        "category": "Botanical Color"
+      },
+      {
+        "name": "Deluxe Paraffin Spa Pedicure",
+        "price": 850,
+        "durationMinutes": 50,
+        "category": "Hands & Feet Care"
+      },
+      {
+        "name": "Olaplex No. 1 & 2 Molecular Bond Repair",
+        "price": 1650,
+        "durationMinutes": 45,
+        "category": "Botanical Color"
+      }
+    ]
   },
   {
     "id": "beauty_parlour",
-    "name": "Roop Mahal Beauty Parlour & Makeover Space",
+    "name": "Beauty Parlour",
+    "businessName": "Roop Mahal Beauty Parlour & Makeover Space",
     "category": "beauty",
     "description": "Serving patrons for over 18 years in Connaught Place, Roop Mahal blends classic Indian herbal beauty secrets like turmeric, saffron, and sandalwood with modern waxing and gold facials.",
     "tagline": "Timeless Indian Beauty, Herbal Facials, Threading & Radiance Care",
-    "thumbnailUrl": "https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?auto=format&fit=crop&w=1200&q=80",
-    "isVip": false,
-    "previewUrl": "https://fanal-templetes-app.vercel.app/templates/beauty_parlour/preview",
-    "customizeUrl": "https://fanal-templetes-app.vercel.app/editor?templateId=beauty_parlour",
-    "image": "/assets/templates/beauty_parlour.webp"
+    "palette": "Rose Gold & Ivory Theme",
+    "layout": "curved_elegant",
+    "image": "/assets/templates/beauty_parlour.webp",
+    "customizeUrl": "https://nexora-one-white-label.templateapp67.chatgpt.site/",
+    "sourceRepository": "https://github.com/templateapp67-oss/studioflow",
+    "services": [
+      {
+        "name": "Full Face Organic Threading & Brow Shaping",
+        "price": 250,
+        "durationMinutes": 25,
+        "category": "Threading & Waxing"
+      },
+      {
+        "name": "Shahnaz Husain 24K Gold Glow Facial",
+        "price": 1450,
+        "durationMinutes": 60,
+        "category": "Herbal Facials"
+      },
+      {
+        "name": "Rica White Chocolate Full Body Waxing",
+        "price": 1550,
+        "durationMinutes": 75,
+        "category": "Threading & Waxing"
+      },
+      {
+        "name": "O3+ Ayurvedic D-Tan Brightening Pack",
+        "price": 600,
+        "durationMinutes": 30,
+        "category": "D-Tan & Bleach"
+      },
+      {
+        "name": "Karva Chauth & Diwali Shringaar Combo",
+        "price": 2100,
+        "durationMinutes": 90,
+        "category": "Festive Glow Combos"
+      }
+    ]
   },
   {
     "id": "nail_studio",
-    "name": "Pinky Nails Studio",
+    "name": "Nail & Lash Studio",
+    "businessName": "Pinky Nails Studio",
     "category": "nails",
     "description": "Located in posh Jubilee Hills, Pinky Nails Studio is a boutique sanctuary for high-definition nail art, lash extensions, and brow lamination. We combine sterilized medical-grade tools, 9-free toxin-safe gel polishes, and custom aesthetic designs in a serene luxury studio.",
     "tagline": "Glossy Chrome Gel Nails, Sculpted Extensions, Lash Lifts & Laminated Brows",
-    "thumbnailUrl": "https://fanal-templetes-app.vercel.app/assets/main_salon_hero_1788433653488-wMn26tff.jpg",
-    "isVip": false,
-    "previewUrl": "https://fanal-templetes-app.vercel.app/templates/nail_studio/preview",
-    "customizeUrl": "https://fanal-templetes-app.vercel.app/editor?templateId=nail_studio",
-    "image": "/assets/templates/nail_studio.webp"
+    "palette": "Chic Pink & Dark Rose Luxury Theme",
+    "layout": "bento_grid",
+    "image": "/assets/templates/studioflow_nail_studio.webp",
+    "customizeUrl": "https://nexora-one-white-label.templateapp67.chatgpt.site/",
+    "sourceRepository": "https://github.com/templateapp67-oss/studioflow",
+    "services": [
+      {
+        "name": "Full Set Gel-X Sculpted Extensions",
+        "price": 2400,
+        "durationMinutes": 90,
+        "category": "Gel Extensions"
+      },
+      {
+        "name": "Russian Dry Cuticle Precision Manicure",
+        "price": 1100,
+        "durationMinutes": 60,
+        "category": "Russian Manicure"
+      },
+      {
+        "name": "10-Finger 3D Handpainted & Chrome Art",
+        "price": 1500,
+        "durationMinutes": 60,
+        "category": "Handpainted Art"
+      },
+      {
+        "name": "Hailey Glazed Donut Pearlescent Finish",
+        "price": 1600,
+        "durationMinutes": 45,
+        "category": "Chrome & Glaze"
+      },
+      {
+        "name": "Luxury Rose Petal & Champagne Spa Pedicure",
+        "price": 1350,
+        "durationMinutes": 50,
+        "category": "Russian Manicure"
+      }
+    ]
   },
   {
     "id": "hair_spa",
-    "name": "Kesh Prakriti Hair Spa & Scalp Sanctuary",
+    "name": "Hair Spa & Treatment",
+    "businessName": "Kesh Prakriti Hair Spa & Scalp Sanctuary",
     "category": "spa",
     "description": "Nestled in quiet Alwarpet, Chennai, Kesh Prakriti specializes in trichology-backed scalp rejuvenation. Using Japanese ultrasonic mist and traditional Indian medicinal herbs, we reverse scalp stress, hair thinning, and urban pollution.",
     "tagline": "Deep Zen Head Spa, Micro-Mist Scalp Detox & Botanical Revitalization",
-    "thumbnailUrl": "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&q=80",
-    "isVip": false,
-    "previewUrl": "https://fanal-templetes-app.vercel.app/templates/hair_spa/preview",
-    "customizeUrl": "https://fanal-templetes-app.vercel.app/editor?templateId=hair_spa",
-    "image": "/assets/templates/hair_spa.webp"
+    "palette": "Deep Emerald Green & Sage Theme",
+    "layout": "zen_emerald",
+    "image": "/assets/templates/hair_spa.webp",
+    "customizeUrl": "https://nexora-one-white-label.templateapp67.chatgpt.site/",
+    "sourceRepository": "https://github.com/templateapp67-oss/studioflow",
+    "services": [
+      {
+        "name": "Japanese Ultrasonic Head Spa & Scalp Detox",
+        "price": 1950,
+        "durationMinutes": 70,
+        "category": "Scalp Detox"
+      },
+      {
+        "name": "Ayurvedic Bhringraj & Brahmi Kesh Lepam",
+        "price": 1650,
+        "durationMinutes": 60,
+        "category": "Ayurvedic Lepam"
+      },
+      {
+        "name": "Moroccan Argan Deep Nourishing Steam Ritual",
+        "price": 2100,
+        "durationMinutes": 75,
+        "category": "Intense Moisture Steam"
+      },
+      {
+        "name": "Anti-Dandruff Tea Tree & Neem Ozone Therapy",
+        "price": 1450,
+        "durationMinutes": 50,
+        "category": "Scalp Detox"
+      },
+      {
+        "name": "Peptide Root Density & Hair Fall Defense Ritual",
+        "price": 2400,
+        "durationMinutes": 65,
+        "category": "Hair Fall Defense"
+      }
+    ]
   },
   {
     "id": "skincare_clinic",
-    "name": "Dermacure Aesthetic Dermatology & Laser Clinic",
+    "name": "Facial & Skincare Clinic",
+    "businessName": "Dermacure Aesthetic Dermatology & Laser Clinic",
     "category": "skin",
     "description": "Dermacure in Gurugram brings US-FDA approved technologies, medical-grade HydraFacials, and customized peeling regimens under the direct guidance of certified dermatologists for radiant, healthy Indian skin.",
     "tagline": "Evidence-Based Medi-Facials, Chemical Peels & Certified Dermatological Care",
-    "thumbnailUrl": "https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1200&q=80",
-    "isVip": false,
-    "previewUrl": "https://fanal-templetes-app.vercel.app/templates/skincare_clinic/preview",
-    "customizeUrl": "https://fanal-templetes-app.vercel.app/editor?templateId=skincare_clinic",
-    "image": "/assets/templates/skincare_clinic.webp"
+    "palette": "Fresh Blue & Crisp White Theme",
+    "layout": "clinical_clean",
+    "image": "/assets/templates/skincare_clinic.webp",
+    "customizeUrl": "https://nexora-one-white-label.templateapp67.chatgpt.site/",
+    "sourceRepository": "https://github.com/templateapp67-oss/studioflow",
+    "services": [
+      {
+        "name": "Medi-Grade Hydra Dermabrasion & Antioxidant Infusion",
+        "price": 3200,
+        "durationMinutes": 60,
+        "category": "Hydra-Infusion"
+      },
+      {
+        "name": "Glycolic Radiance Skin Renewal Peel",
+        "price": 2100,
+        "durationMinutes": 45,
+        "category": "Chemical Peels"
+      },
+      {
+        "name": "Carbon Hollywood Laser Doll Peel",
+        "price": 3800,
+        "durationMinutes": 60,
+        "category": "Laser & Pigmentation"
+      },
+      {
+        "name": "LED Photo-Dynamic Acne Clear Therapy",
+        "price": 1800,
+        "durationMinutes": 40,
+        "category": "Medi-Facials"
+      },
+      {
+        "name": "Deep Hyaluronic Multi-Molecular Hydration Boost",
+        "price": 2600,
+        "durationMinutes": 50,
+        "category": "Hydra-Infusion"
+      }
+    ]
   },
   {
     "id": "makeup_studio",
-    "name": "Vogue Noir Makeup Studio & Academy",
+    "name": "Makeup Studio",
+    "businessName": "Vogue Noir Makeup Studio & Academy",
     "category": "beauty",
     "description": "Situated in the chic lanes of Koregaon Park, Pune, Vogue Noir is an elite editorial makeup studio. We craft camera-ready looks for red carpets, commercial shoots, and luxury receptions with luminous liquid gold highlights.",
     "tagline": "Glamorous Runway Looks, High-Definition Airbrush & Editorial Portfolios",
-    "thumbnailUrl": "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=1200&q=80",
-    "isVip": false,
-    "previewUrl": "https://fanal-templetes-app.vercel.app/templates/makeup_studio/preview",
-    "customizeUrl": "https://fanal-templetes-app.vercel.app/editor?templateId=makeup_studio",
-    "image": "/assets/templates/makeup_studio.webp"
+    "palette": "Sleek Dark Mode with Gold Accents",
+    "layout": "dark_glam",
+    "image": "/assets/templates/makeup_studio.webp",
+    "customizeUrl": "https://nexora-one-white-label.templateapp67.chatgpt.site/",
+    "sourceRepository": "https://github.com/templateapp67-oss/studioflow",
+    "services": [
+      {
+        "name": "Red Carpet HD Glass Skin Glam & Mink Lashes",
+        "price": 4500,
+        "durationMinutes": 75,
+        "category": "Red Carpet Glam"
+      },
+      {
+        "name": "Temptu 4K Silicone Airbrush Event Makeup",
+        "price": 6500,
+        "durationMinutes": 90,
+        "category": "4K Airbrush"
+      },
+      {
+        "name": "Cocktail & Sangeet Golden Hour Glow",
+        "price": 5200,
+        "durationMinutes": 80,
+        "category": "Cocktail & Party"
+      },
+      {
+        "name": "1-on-1 Self-Makeup Pro Masterclass",
+        "price": 7500,
+        "durationMinutes": 120,
+        "category": "Masterclasses"
+      },
+      {
+        "name": "Editorial Monochromatic Dewy Glow",
+        "price": 3800,
+        "durationMinutes": 60,
+        "category": "Red Carpet Glam"
+      }
+    ]
   },
   {
     "id": "massage_wellness",
-    "name": "Bodhi Tree Massage & Wellness Sanctuary",
+    "name": "Massage & Wellness Center",
+    "businessName": "Bodhi Tree Massage & Wellness Sanctuary",
     "category": "spa",
     "description": "Set amidst peaceful surroundings in Candolim, Goa, Bodhi Tree integrates warm Himalayan salt stones, bamboo wood rolls, and therapeutic essential oils to relieve chronic muscle knots and urban fatigue.",
     "tagline": "Peaceful Sanctuary, Himalayan Hot Stone Therapy & Deep Stress Dissolution",
-    "thumbnailUrl": "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=1200&q=80",
-    "isVip": false,
-    "previewUrl": "https://fanal-templetes-app.vercel.app/templates/massage_wellness/preview",
-    "customizeUrl": "https://fanal-templetes-app.vercel.app/editor?templateId=massage_wellness",
-    "image": "/assets/templates/massage_wellness.webp"
+    "palette": "Warm Earth Tones & Bamboo Texture",
+    "layout": "earth_bamboo",
+    "image": "/assets/templates/massage_wellness.webp",
+    "customizeUrl": "https://nexora-one-white-label.templateapp67.chatgpt.site/",
+    "sourceRepository": "https://github.com/templateapp67-oss/studioflow",
+    "services": [
+      {
+        "name": "90-Min Deep Tissue Muscle Knot Release",
+        "price": 2600,
+        "durationMinutes": 90,
+        "category": "Deep Tissue"
+      },
+      {
+        "name": "Himalayan Warm Salt Stone Therapy",
+        "price": 2900,
+        "durationMinutes": 75,
+        "category": "Himalayan Hot Stone"
+      },
+      {
+        "name": "Kerala Spiced Herbal Potli Massage",
+        "price": 2400,
+        "durationMinutes": 60,
+        "category": "Deep Tissue"
+      },
+      {
+        "name": "Lavender & Frankincense Aromatherapy Sleep Ritual",
+        "price": 2300,
+        "durationMinutes": 60,
+        "category": "Aromatherapy"
+      },
+      {
+        "name": "Tibetan Foot Acupressure & Reflexology",
+        "price": 1500,
+        "durationMinutes": 45,
+        "category": "Reflexology"
+      }
+    ]
   },
   {
     "id": "hair_coloring",
-    "name": "Prism & Chroma Hair Color Atelier",
+    "name": "Hair Coloring Studio",
+    "businessName": "Prism & Chroma Hair Color Atelier",
     "category": "hair",
     "description": "Located on Wood Street in Ashok Nagar, Bengaluru, Prism & Chroma is an avant-garde hair coloring studio. From honey caramel dimensional balayage to bold fantasy pastels, our certified color masters formulate custom shades tailored to Indian skin tones.",
     "tagline": "Hand-Painted Balayage, Luminous Metallics & Custom Fantasy Swatches",
-    "thumbnailUrl": "https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&w=1200&q=80",
-    "isVip": false,
-    "previewUrl": "https://fanal-templetes-app.vercel.app/templates/hair_coloring/preview",
-    "customizeUrl": "https://fanal-templetes-app.vercel.app/editor?templateId=hair_coloring",
-    "image": "/assets/templates/hair_coloring.webp"
+    "palette": "Bold Multi-Color Gradient Accents",
+    "layout": "creative_gallery",
+    "image": "/assets/templates/hair_coloring.webp",
+    "customizeUrl": "https://nexora-one-white-label.templateapp67.chatgpt.site/",
+    "sourceRepository": "https://github.com/templateapp67-oss/studioflow",
+    "services": [
+      {
+        "name": "Signature Caramel Balayage & Olaplex Glaze",
+        "price": 5200,
+        "durationMinutes": 180,
+        "category": "Balayage & Ombre"
+      },
+      {
+        "name": "Vivid Pastel / Neon Fantasy Color (Semi-Permanent)",
+        "price": 4200,
+        "durationMinutes": 150,
+        "category": "Fashion Pastels"
+      },
+      {
+        "name": "Global Ash Platinum Blonde & Tonal Neutralizer",
+        "price": 6200,
+        "durationMinutes": 210,
+        "category": "Global Bleach & Tone"
+      },
+      {
+        "name": "Face-Framing Money Piece & Crown Foiling",
+        "price": 2400,
+        "durationMinutes": 75,
+        "category": "Money Piece Foils"
+      },
+      {
+        "name": "Dimensional Lowlights & Seamless Grey Blending",
+        "price": 3600,
+        "durationMinutes": 120,
+        "category": "Balayage & Ombre"
+      }
+    ]
   },
   {
     "id": "bridal_lounge",
-    "name": "Shringaar Royal Indian Bridal Lounge",
+    "name": "Bridal Makeup & Makeover Lounge",
+    "businessName": "Shringaar Royal Indian Bridal Lounge",
     "category": "beauty",
     "description": "Perched on MI Road in Jaipur, Shringaar is Rajasthan’s most celebrated bridal makeover sanctuary. We specialize in grand wedding day makeup, royal zardozi dupatta settings, airbrush longevity, and customized 7-day pre-bridal ubtan rituals.",
     "tagline": "Royal Rajputana Trousseaus, Sabyasachi Aesthetic & Heirloom Makeover Packages",
-    "thumbnailUrl": "https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?auto=format&fit=crop&w=1200&q=80",
-    "isVip": false,
-    "previewUrl": "https://fanal-templetes-app.vercel.app/templates/bridal_lounge/preview",
-    "customizeUrl": "https://fanal-templetes-app.vercel.app/editor?templateId=bridal_lounge",
-    "image": "/assets/templates/bridal_lounge.webp"
+    "palette": "Deep Crimson & Gold Theme",
+    "layout": "royal_crimson",
+    "image": "/assets/templates/bridal_lounge.webp",
+    "customizeUrl": "https://nexora-one-white-label.templateapp67.chatgpt.site/",
+    "sourceRepository": "https://github.com/templateapp67-oss/studioflow",
+    "services": [
+      {
+        "name": "Royal Rajputana / Mughal Full Bridal Trousseau",
+        "price": 35000,
+        "durationMinutes": 240,
+        "category": "Royal Bridal Trousseau"
+      },
+      {
+        "name": "Sabyasachi-Style Classic Crimson Red Bridal Glam",
+        "price": 24000,
+        "durationMinutes": 180,
+        "category": "Royal Bridal Trousseau"
+      },
+      {
+        "name": "Cocktail & Sangeet Ultra-Glow HD Look",
+        "price": 12000,
+        "durationMinutes": 120,
+        "category": "Mehendi & Sangeet"
+      },
+      {
+        "name": "Pre-Bridal 7-Day Sandalwood & Rose Ubtan Ritual",
+        "price": 16500,
+        "durationMinutes": 180,
+        "category": "Pre-Bridal Ubtan Glow"
+      },
+      {
+        "name": "Traditional Kanjeevaram / Banarasi Saree Draping",
+        "price": 1800,
+        "durationMinutes": 45,
+        "category": "Draping & Turbans"
+      }
+    ]
   },
   {
     "id": "tattoo_studio",
-    "name": "Iron & Ink Urban Tattoo & Body Art Studio",
+    "name": "Tattoo & Body Art Studio",
+    "businessName": "Iron & Ink Urban Tattoo & Body Art Studio",
     "category": "tattoo",
     "description": "Located in bohemian Hauz Khas Village, New Delhi, Iron & Ink is a studio dedicated to custom blackwork, fine-line realism, and sterile body piercings using 100% single-use disposable needles.",
     "tagline": "High-Contrast Monochrome, Custom Dark Realism & Surgical Piercings",
-    "thumbnailUrl": "https://images.unsplash.com/photo-1598371839696-5c5bb00bdc28?auto=format&fit=crop&w=1200&q=80",
-    "isVip": false,
-    "previewUrl": "https://fanal-templetes-app.vercel.app/templates/tattoo_studio/preview",
-    "customizeUrl": "https://fanal-templetes-app.vercel.app/editor?templateId=tattoo_studio",
-    "image": "/assets/templates/tattoo_studio.webp"
+    "palette": "Edgy Dark Urban Layout & Monochrome Design",
+    "layout": "urban_monochrome",
+    "image": "/assets/templates/tattoo_studio.webp",
+    "customizeUrl": "https://nexora-one-white-label.templateapp67.chatgpt.site/",
+    "sourceRepository": "https://github.com/templateapp67-oss/studioflow",
+    "services": [
+      {
+        "name": "Custom Blackwork Full Sleeve Session (3 Hours)",
+        "price": 6000,
+        "durationMinutes": 180,
+        "category": "Custom Blackwork"
+      },
+      {
+        "name": "Minimalist Micro Fine-Line Script / Botanical",
+        "price": 2500,
+        "durationMinutes": 60,
+        "category": "Fine-Line Realism"
+      },
+      {
+        "name": "Hyper-Realistic Portrait & Shading Art",
+        "price": 8500,
+        "durationMinutes": 240,
+        "category": "Fine-Line Realism"
+      },
+      {
+        "name": "Implant-Grade Titanium Ear/Nose Piercing",
+        "price": 1200,
+        "durationMinutes": 30,
+        "category": "Body Piercing"
+      },
+      {
+        "name": "Old Tattoo Redesign & Blast-Over Cover-up",
+        "price": 5000,
+        "durationMinutes": 150,
+        "category": "Tattoo Cover-ups"
+      }
+    ]
   },
   {
     "id": "lash_brow",
-    "name": "Arch & Flutter Lash & Brow Bar",
+    "name": "Lash & Brow Bar",
+    "businessName": "Arch & Flutter Lash & Brow Bar",
     "category": "nails",
     "description": "A chic, intimate micro-studio on Santa Cruz’s Linking Road in Mumbai. Arch & Flutter is devoted purely to eye aesthetics: ultra-light Russian volume lash extensions, semi-permanent feather microblading, and keratin lifts.",
     "tagline": "Feather Microblading, Russian Fluffy Volume & Brow Lamination",
-    "thumbnailUrl": "https://images.unsplash.com/photo-1583001931096-959e9a1a6223?auto=format&fit=crop&w=1200&q=80",
-    "isVip": false,
-    "previewUrl": "https://fanal-templetes-app.vercel.app/templates/lash_brow/preview",
-    "customizeUrl": "https://fanal-templetes-app.vercel.app/editor?templateId=lash_brow",
-    "image": "/assets/templates/lash_brow.webp"
+    "palette": "Soft Beige & Nude Micro-Studio Theme",
+    "layout": "chic_nude",
+    "image": "/assets/templates/lash_brow.webp",
+    "customizeUrl": "https://nexora-one-white-label.templateapp67.chatgpt.site/",
+    "sourceRepository": "https://github.com/templateapp67-oss/studioflow",
+    "services": [
+      {
+        "name": "Russian Volume 4D-6D Fluffy Lash Extensions",
+        "price": 3200,
+        "durationMinutes": 120,
+        "category": "Lash Extensions"
+      },
+      {
+        "name": "Semi-Permanent Feather Microblading Eyebrows",
+        "price": 9500,
+        "durationMinutes": 150,
+        "category": "Microblading"
+      },
+      {
+        "name": "Keratin Lash Lift & Deep Black Tint",
+        "price": 1800,
+        "durationMinutes": 60,
+        "category": "Lash Lifts & Tint"
+      },
+      {
+        "name": "Brow Lamination, Precise Thread & Henna Stain",
+        "price": 1600,
+        "durationMinutes": 50,
+        "category": "Brow Lamination"
+      },
+      {
+        "name": "Classic 1:1 Natural Lash Extension Set",
+        "price": 2400,
+        "durationMinutes": 90,
+        "category": "Lash Extensions"
+      }
+    ]
   },
   {
     "id": "ayurvedic_spa",
-    "name": "Veda Sanjeevani Ayurvedic Wellness & Spa",
+    "name": "Ayurvedic Rejuvenation Spa",
+    "businessName": "Veda Sanjeevani Ayurvedic Wellness & Spa",
     "category": "ayurvedic",
-    "description": "Housed in an authentic heritage courtyard in Fort Kochi, Kerala, Veda Sanjeevani practices pure Ashtanga Ayurveda under the stewardship of traditional Vaidyas. Experience centuries-old Abhyanga, warm oil Shirodhara, Vedic herbal lepams, and authentic panchakarma rituals.",
+    "description": "Housed in an authentic heritage courtyard in Fort Kochi, Kerala, Veda Sanjeevani practices pure Ashtanga Ayurveda under the stewardship of traditional Vaidyas. Experience centuries-old 4-hand Abhyangam, warm oil Shirodhara, and custom herbal Kizhies.",
     "tagline": "Authentic Kerala Panchakarma, Medicated Shirodhara & Vedic Herbal Lepams",
-    "thumbnailUrl": "https://images.unsplash.com/photo-1600334129128-685c5582fd35?auto=format&fit=crop&w=1200&q=80",
-    "isVip": false,
-    "previewUrl": "https://fanal-templetes-app.vercel.app/templates/ayurvedic_spa/preview",
-    "customizeUrl": "https://fanal-templetes-app.vercel.app/editor?templateId=ayurvedic_spa",
-    "image": "/assets/templates/ayurvedic_spa.webp"
-  },
-  {
-    "id": "ayurvedic_wellness_spa",
-    "name": "Sattva Ayurvedic & Wellness Spa",
-    "category": "ayurvedic",
-    "description": "Set beside the Ganges in Rishikesh, Sattva Ayurvedic & Wellness Spa unites classical Ashtanga Ayurveda with modern wellness care. Every journey begins with a Nadi Pariksha pulse diagnosis, followed by bespoke therapies in authentic Dhanwantharam and Bringamadi herbs that restore Vata, Pitta, and Kapha balance.",
-    "tagline": "Dosha-Balancing Herbal Therapies, Nadi Pariksha Consultations & Deep Restorative Wellness",
-    "thumbnailUrl": "https://images.unsplash.com/photo-1512290900672-1f55b9e07506?auto=format&fit=crop&w=1200&q=80",
-    "isVip": false,
-    "previewUrl": "https://fanal-templetes-app.vercel.app/templates/ayurvedic_wellness_spa/preview",
-    "customizeUrl": "https://fanal-templetes-app.vercel.app/editor?templateId=ayurvedic_wellness_spa",
-    "image": null
-  },
-  {
-    "id": "luxury_hair_salon",
-    "name": "Maison Éclat Luxury Hair Atelier",
-    "category": "hair",
-    "description": "Housed in a private atelier on Lavelle Road, New Delhi, Maison Éclat is a luxury hair house where every appointment opens with a bespoke hair-mapping consultation. Our Kérastase-certified master artists craft precision dry sculpting, hand-painted balayage, Olaplex molecular repair, and mirror-gloss keratin rituals with couture precision.",
-    "tagline": "Haute Hair Couture, Kérastase Rituals & Red-Carpet Precision Gloss",
-    "thumbnailUrl": "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=1200&q=80",
-    "isVip": false,
-    "previewUrl": "https://fanal-templetes-app.vercel.app/templates/luxury_hair_salon/preview",
-    "customizeUrl": "https://fanal-templetes-app.vercel.app/editor?templateId=luxury_hair_salon",
-    "image": "/assets/templates/unisex_salon.webp"
-  },
-  {
-    "id": "bridal_makeover_studio",
-    "name": "Rose & Ivory Bridal Atelier",
-    "category": "beauty",
-    "description": "Tucked into a sunlit studio off Linking Road, Bandra, Rose & Ivory is a high-end bridal and makeover house where every bridal story begins with a personalized moodboard. From sweatproof HD airbrush glam to deep skin prep hydration rituals and sculptural saree draping, our artists craft camera-ready looks that hold their glow through the longest celebrations.",
-    "tagline": "HD Airbrush Bridal Glam, Moodboard-Driven Styling & Flawless Camera-Ready Portraits",
-    "thumbnailUrl": "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=1200&q=80",
-    "isVip": false,
-    "previewUrl": "https://fanal-templetes-app.vercel.app/templates/bridal_makeover_studio/preview",
-    "customizeUrl": "https://fanal-templetes-app.vercel.app/editor?templateId=bridal_makeover_studio",
-    "image": "/assets/templates/makeup_studio.webp"
-  },
-  {
-    "id": "family_salon",
-    "name": "Cedar & Bloom Family Salon",
-    "category": "hair",
-    "description": "Tucked into a bright corner of Viman Nagar, Cedar & Bloom is a modern unisex family salon built for busy households. From signature wash and style cuts to express glow facials and hydra-infusion hair spas, our quick, nourishing services suit all age groups—because healthy hair and skin should never require a whole day.",
-    "tagline": "Quick Family Cuts, Express Glow & Everyday Hair Health for Every Generation",
-    "thumbnailUrl": "https://images.unsplash.com/photo-1583001931096-959e9a1a6223?auto=format&fit=crop&w=1200&q=80",
-    "isVip": false,
-    "previewUrl": "https://fanal-templetes-app.vercel.app/templates/family_salon/preview",
-    "customizeUrl": "https://fanal-templetes-app.vercel.app/editor?templateId=family_salon",
-    "image": "/assets/templates/lash_brow.webp"
-  },
-  {
-    "id": "barber_grooming_club",
-    "name": "The Iron Standard Barber & Grooming Club",
-    "category": "barber",
-    "description": "A members-grade gentlemen’s club in Cyber City, Gurugram, where The Iron Standard treats grooming as a daily ritual. Royal straight-razor beard sculpts, executive cuts with scalp rubs, and charcoal detox facials—every visit closes with hot towel therapy and a clean, sharp look.",
-    "tagline": "Straight-Razor Precision, Hot Towel Rituals & Members-Grade Grooming",
-    "thumbnailUrl": "https://images.unsplash.com/photo-1621605815971-fbc98d665033?auto=format&fit=crop&w=1200&q=80",
-    "isVip": false,
-    "previewUrl": "https://fanal-templetes-app.vercel.app/templates/barber_grooming_club/preview",
-    "customizeUrl": "https://fanal-templetes-app.vercel.app/editor?templateId=barber_grooming_club",
-    "image": "/assets/templates/barber_grooming_club.webp"
-  },
-  {
-    "id": "nails_lash_brow_bar",
-    "name": "Peony & Lacquer Lash, Brow & Nail Bar",
-    "category": "nails",
-    "description": "A three-in-one micro-bar in Frazer Town, Bengaluru, where Peony & Lacquer unites nail couture, Russian volume lashes, and brow lamination under one roof. Every service runs on non-damaging organic formulas, precise detailing, and long-lasting retention—so your trendy aesthetic holds from day one to day twenty.",
-    "tagline": "Lacquer Couture, Feather Lashes & Laminated Brows—All in One Bar",
-    "thumbnailUrl": "https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?auto=format&fit=crop&w=1200&q=80",
-    "isVip": false,
-    "previewUrl": "https://fanal-templetes-app.vercel.app/templates/nails_lash_brow_bar/preview",
-    "customizeUrl": "https://fanal-templetes-app.vercel.app/editor?templateId=nails_lash_brow_bar",
-    "image": "/assets/templates/beauty_parlour.webp"
-  },
-  {
-    "id": "medispa_aesthetics",
-    "name": "Porcelain Skin Lab Medi-Spa & Aesthetics Clinic",
-    "category": "skin",
-    "description": "A calm, porcelain-white clinic in Alipore, Kolkata, where Porcelain Skin Lab pairs dermatologist-tested protocols with the comfort of a spa. From Advanced HydraFacial MD to LED anti-aging and micro-needling collagen boosters, every treatment targets deep cellular renewal and skin texture smoothing—with zero downtime.",
-    "tagline": "Dermatologist-Led Skin Science, Spa-Grade Comfort & Zero-Downtime Glow",
-    "thumbnailUrl": "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=1200&q=80",
-    "isVip": false,
-    "previewUrl": "https://fanal-templetes-app.vercel.app/templates/medispa_aesthetics/preview",
-    "customizeUrl": "https://fanal-templetes-app.vercel.app/editor?templateId=medispa_aesthetics",
-    "image": "/assets/templates/medispa_aesthetics.webp"
-  },
-  {
-    "id": "organic_bio_salon",
-    "name": "Terra Botanica Organic & Bio-Salon",
-    "category": "ayurvedic",
-    "description": "A zero-waste bio-salon in Gandhipuram, Coimbatore, where Terra Botanica cares for hair and skin with 100% vegan, chemical-free formulations. From botanical herbal color to cold-pressed eco-gloss spas, every ingredient is ethically sourced to nurture—so the radiance you see is gentle, natural, and unmistakably you.",
-    "tagline": "100% Vegan Color, Plant-Based Facials & Zero-Waste Hair Rituals",
-    "thumbnailUrl": "https://images.unsplash.com/photo-1519823551278-64ac92734fb1?auto=format&fit=crop&w=1200&q=80",
-    "isVip": false,
-    "previewUrl": "https://fanal-templetes-app.vercel.app/templates/organic_bio_salon/preview",
-    "customizeUrl": "https://fanal-templetes-app.vercel.app/editor?templateId=organic_bio_salon",
-    "image": "/assets/templates/organic_bio_salon.webp"
-  },
-  {
-    "id": "express_beauty_bar",
-    "name": "Blink Express Beauty Bar",
-    "category": "nails",
-    "description": "A zero-wait express beauty bar in Jayanagar, Bengaluru, where Blink turns your busiest routine into a perfect 15-minute refresh. From 15-Min Express Blowdries to Instant Flash Glow Cleanups, every service delivers fast application, instant visible freshness, and perfect results for busy routines.",
-    "tagline": "Walk-In Express Beauty—Perfect Freshness in 15 Minutes, Zero Wait",
-    "thumbnailUrl": "https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80",
-    "isVip": false,
-    "previewUrl": "https://fanal-templetes-app.vercel.app/templates/express_beauty_bar/preview",
-    "customizeUrl": "https://fanal-templetes-app.vercel.app/editor?templateId=express_beauty_bar",
-    "image": "/assets/templates/hair_salon.webp"
-  },
-  {
-    "id": "thai_massage_center",
-    "name": "Baan Sen Thai & Oriental Massage Center",
-    "category": "spa",
-    "description": "A candle-lit oriental sanctuary in Kovalam, Kerala, where Baan Sen practices traditional Thai and oriental massage exactly as generations of healers taught it. From dry Thai stretches to aroma herbal oils and reflexology foot pressure, every session unblocks the body’s Sen energy lines—delivering full muscle tension relief and deep mental rejuvenation.",
-    "tagline": "Ancient Thai Stretch, Sen Line Therapy & Oriental Calm",
-    "thumbnailUrl": "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=1200&q=80",
-    "isVip": false,
-    "previewUrl": "https://fanal-templetes-app.vercel.app/templates/thai_massage_center/preview",
-    "customizeUrl": "https://fanal-templetes-app.vercel.app/editor?templateId=thai_massage_center",
-    "image": "/assets/templates/massage_wellness.webp"
-  },
-  {
-    "id": "kids_teens_studio",
-    "name": "Scissors & Sprinkles Kids & Teens Fun Hair Studio",
-    "category": "kids",
-    "description": "A candy-coloured playroom salon in Adyar, Chennai, where Scissors & Sprinkles turns haircuts into celebrations. Every service runs on tear-free gentle products inside an interactive fun environment, so kids walk out grinning with trendy safe styling—and parents walk out relaxed.",
-    "tagline": "First Haircuts, Cool Cuts & Tween Fresh—Fun, Fear-Free & Trendy",
-    "thumbnailUrl": "https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?auto=format&fit=crop&w=1200&q=80",
-    "isVip": false,
-    "previewUrl": "https://fanal-templetes-app.vercel.app/templates/kids_teens_studio/preview",
-    "customizeUrl": "https://fanal-templetes-app.vercel.app/editor?templateId=kids_teens_studio",
-    "image": "/assets/templates/beauty_parlour.webp"
-  },
-  {
-    "id": "resort_spa",
-    "name": "Azure Palms Luxury Hotel & Resort Spa",
-    "category": "spa",
-    "description": "Perched on the shores of Lake Pichola, Udaipur, Azure Palms is a 5-star resort spa where every ritual is an occasion. From Destination Sunset Body Polishes to Rose & Wine Couple Journeys, essential oil scents, deep stress relief, and pampering sensory experiences define every corner of the estate.",
-    "tagline": "Lake-View Suites, Sunset Rituals & 5-Star Sensory Pampering",
-    "thumbnailUrl": "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&q=80",
-    "isVip": false,
-    "previewUrl": "https://fanal-templetes-app.vercel.app/templates/resort_spa/preview",
-    "customizeUrl": "https://fanal-templetes-app.vercel.app/editor?templateId=resort_spa",
-    "image": "/assets/templates/hair_spa.webp"
-  },
-  {
-    "id": "vedic_ayurveda_studio",
-    "name": "Vedvriksha Vedic Ayurveda Wellness Studio",
-    "category": "ayurvedic",
-    "description": "A warm, marigold-scented wellness studio in Gopalpura, Jaipur, where Vedvriksha practices time-honoured Ayurvedic therapy with modern care. From Abhyanga body massage and Shirodhara to Kashaya Sekam detox and Kadi/Janu Vashti pain relief, every treatment is designed to restore your body’s natural balance.",
-    "tagline": "Time-Honoured Ayurvedic Therapies—Abhyanga, Shirodhara & Vedic Herbal Care",
-    "thumbnailUrl": "https://images.unsplash.com/photo-1519823551278-64ac92734fb1?auto=format&fit=crop&w=1200&q=80",
-    "isVip": false,
-    "previewUrl": "https://fanal-templetes-app.vercel.app/templates/vedic_ayurveda_studio/preview",
-    "customizeUrl": "https://fanal-templetes-app.vercel.app/editor?templateId=vedic_ayurveda_studio",
-    "image": "/assets/templates/organic_bio_salon.webp"
+    "palette": "Traditional Indian Heritage & Terracotta/Copper Accents",
+    "layout": "ayurvedic_terracotta",
+    "image": "/assets/templates/ayurvedic_spa.webp",
+    "customizeUrl": "https://nexora-one-white-label.templateapp67.chatgpt.site/",
+    "sourceRepository": "https://github.com/templateapp67-oss/studioflow",
+    "services": [
+      {
+        "name": "Traditional 4-Hand Abhyangam Full Body Therapy",
+        "price": 2800,
+        "durationMinutes": 75,
+        "category": "Abhyangam Therapies"
+      },
+      {
+        "name": "Medicated Herbal Oil Shirodhara Stream Therapy",
+        "price": 3200,
+        "durationMinutes": 60,
+        "category": "Shirodhara Streams"
+      },
+      {
+        "name": "Elakizhi Warm Herbal Leaf Poultice Relief",
+        "price": 2600,
+        "durationMinutes": 60,
+        "category": "Herbal Kizhies"
+      },
+      {
+        "name": "Full Panchakarma Detox & Vaidya Pulse Diagnosis",
+        "price": 4500,
+        "durationMinutes": 90,
+        "category": "Panchakarma Detox"
+      },
+      {
+        "name": "Mukha Lepam Ayurvedic Sandalwood Radiance Pack",
+        "price": 1500,
+        "durationMinutes": 50,
+        "category": "Abhyangam Therapies"
+      }
+    ]
   }
 ]
