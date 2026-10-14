@@ -30,3 +30,7 @@ This is the existing static website. It has no connected database, SQL migration
 ## Studioflow template collection
 
 The home and Templates page now use all 14 templates from [Studioflow](https://github.com/templateapp67-oss/studioflow). Catalogue metadata and sample services were sourced from `src/categoryTemplates.ts` (blob `0885fe5c9c94578c83e65ff7b30a5a7ef8bc7bb6`). The original 28-template collection has been replaced. Template detail dialogs show source covers, palettes and sample service menus. The Use in Studioflow button opens the Studioflow builder; sign in and choose the matching template there. No automatic cross-site template selection or account transfer is implemented.
+
+## Native Android companion
+
+See [`android/README.md`](android/README.md) for the Kotlin / Jetpack Compose / Material 3 companion app, its Supabase Auth and private Storage setup, protected Edge Functions, Firebase Cloud Messaging, and consent-controlled diagnostics. The Android companion is separate from the static website. Backend/Firebase configuration is required for live account and notification features. GitHub Actions builds the debug APK and runs unit/security-boundary tests; download the APK from the successful Android companion run's artifacts.
