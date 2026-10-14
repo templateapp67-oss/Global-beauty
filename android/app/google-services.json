@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "750010804661",
+    "project_id": "nexora-beauty",
+    "storage_bucket": "nexora-beauty.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:750010804661:android:1390b296c478ea7cd651fc",
+        "android_client_info": {
+          "package_name": "com.nexora.companion"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "750010804661-cqursbgtrc85j50fos9ubqvgcc24u3st.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD0TwMso3V_UaLmWUnbkAwkL3b5DJhtcKs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "750010804661-cqursbgtrc85j50fos9ubqvgcc24u3st.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

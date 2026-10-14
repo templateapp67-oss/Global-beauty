@@ -10,7 +10,7 @@ Open this `android/` directory in Android Studio with JDK 17 and Android SDK 35.
 ./gradlew :app:assembleDebug :app:testDebugUnitTest
 ```
 
-Debug APK: `app/build/outputs/apk/debug/app-debug.apk`. The public Studioflow Supabase URL and publishable key are configured in `backend.properties`; local.properties and environment variables can override them. No service-role or Firebase private credentials are committed. Production distribution needs your signing keystore, package/store configuration, current Play target-SDK review and release QA. Do not commit signing keys or service-role keys.
+Debug APK: `app/build/outputs/apk/debug/app-debug.apk`. The public Studioflow Supabase URL and publishable key are configured in `backend.properties`; local.properties and environment variables can override them. The Android Firebase client configuration for project `nexora-beauty` is included. No service-role or Firebase service-account credentials are committed. Production distribution needs your signing keystore, package/store configuration, current Play target-SDK review and release QA. Do not commit signing keys or service-role keys.
 
 ## Supabase setup (required for accounts/files)
 
@@ -29,7 +29,7 @@ The repository uses Supabase's Auth, Storage, PostgREST and Edge Function REST A
 
 Supabase does **not** have a service called Supabase Cloud Messaging. This app uses **Firebase Cloud Messaging** with Supabase Edge Functions as the trusted dispatch layer.
 
-1. Register Android package `com.nexora.companion` in your Firebase project. Download `google-services.json` into `app/` (gitignored). Google Services and Crashlytics Gradle plugins activate only when this file exists. Firebase features are disabled otherwise.
+1. Android package `com.nexora.companion` is registered in Firebase project `nexora-beauty`. The supplied public client configuration is included at `app/google-services.json`, enabling the Google Services and Crashlytics Gradle plugins. Firebase initialization is configured, but all optional collection still starts disabled. Client configuration contains public app identifiers, not server credentials.
 2. Enable the FCM HTTP v1 API. Store the service-account JSON as Edge Function secret `FIREBASE_SERVICE_ACCOUNT_JSON`, and a strong independent random `PUSH_DISPATCH_SECRET`. These secrets must never be placed in the APK, source control or chat.
 3. Deploy `send-push`. Only trusted backend jobs call it using `Authorization: Bearer <PUSH_DISPATCH_SECRET>` and JSON `{ "user_id": "uuid", "title": "...", "body": "..." }`. Do not send health, document, identity or other sensitive content in push messages. The function sends **data-only** messages, so local consent, current account and OS permission are checked before display. It has no public user-callable broadcast path.
 4. Settings has separate opt-ins. Collection is disabled in the manifest before initialization; analytics never records email, profile data or files. Crash reporting is off until consent. Revocation disables collection, deletes unsent crash reports, and resets analytics data. This does not erase diagnostics already sent to Firebase; use provider retention/deletion controls for that.
