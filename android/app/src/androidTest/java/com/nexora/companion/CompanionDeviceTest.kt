@@ -1,6 +1,8 @@
 package com.nexora.companion
 
 import androidx.compose.ui.test.*
+import androidx.compose.ui.semantics.SemanticsActions
+import androidx.test.espresso.Espresso.closeSoftKeyboard
 import androidx.compose.ui.test.junit4.createAndroidComposeRule
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import com.google.firebase.FirebaseApp
@@ -17,30 +19,42 @@ import org.junit.runner.RunWith
 class CompanionDeviceTest {
     @get:Rule val compose = createAndroidComposeRule<MainActivity>()
 
+    private fun inList(text: String): SemanticsNodeInteraction {
+        // LazyColumn does not compose off-screen rows. Scroll the container
+        // until the target exists, then interact with the actual UI node.
+        compose.onNode(SemanticsMatcher.keyIsDefined(SemanticsActions.ScrollToIndex))
+            .performScrollToNode(hasText(text))
+        return compose.onNodeWithText(text)
+    }
+
     @Test fun installedAppStartsAndOpensNativeTemplateDetails() {
         compose.onNodeWithText("Explore 14 Studioflow designs").assertIsDisplayed().performClick()
         compose.onNodeWithText("All 14 templates from Studioflow.").assertIsDisplayed()
-        compose.onNodeWithText("Search templates").performTextInput("Barber")
-        compose.onNodeWithText("1 templates").performScrollTo().assertIsDisplayed()
-        compose.onNodeWithText("Barber Shop / Men's Grooming").performScrollTo().performClick()
-        compose.onNodeWithText("Sample service menu").performScrollTo().assertIsDisplayed()
-        compose.onNodeWithText("Use in Studioflow").performScrollTo().assertIsDisplayed()
+        inList("Search templates").performTextInput("Barber")
+        closeSoftKeyboard()
+        inList("1 templates").assertIsDisplayed()
+        inList("Barber Shop / Men's Grooming").performClick()
+        inList("Sample service menu").assertIsDisplayed()
+        inList("Use in Studioflow").assertIsDisplayed()
         compose.onNodeWithContentDescription("Back").performClick()
-        compose.onNodeWithText("Search templates").assertExists()
+        inList("Search templates").assertIsDisplayed()
     }
 
     @Test fun nativeAuthValidationBlocksInvalidInputWithoutSubmittingAccounts() {
         compose.onNodeWithText("Profile").performClick()
         compose.onNodeWithText("Welcome back").assertIsDisplayed()
         compose.onNodeWithText("Email").performTextInput("invalid-address")
-        compose.onNodeWithText("Password").performTextInput("123456")
-        compose.onNodeWithText("Sign in").performScrollTo().assertIsNotEnabled()
-        compose.onNodeWithText("Email").performTextReplacement("qa@example.test")
-        compose.onNodeWithText("Sign in").performScrollTo().assertIsEnabled()
-        compose.onNodeWithText("Create an account").performScrollTo().performClick()
-        compose.onNodeWithText("Create account").performScrollTo().assertIsNotEnabled()
-        compose.onNodeWithText("Password").performTextReplacement("12345678")
-        compose.onNodeWithText("Create account").performScrollTo().assertIsEnabled()
+        inList("Password").performTextInput("123456")
+        closeSoftKeyboard()
+        inList("Sign in").assertIsNotEnabled()
+        inList("Email").performTextReplacement("qa@example.test")
+        closeSoftKeyboard()
+        inList("Sign in").assertIsEnabled()
+        inList("Create an account").performClick()
+        inList("Create account").assertIsNotEnabled()
+        inList("Password").performTextReplacement("12345678")
+        closeSoftKeyboard()
+        inList("Create account").assertIsEnabled()
     }
 
     @Test fun firebaseAndroidIdentityLoadsWithOptionalCollectionDisabled() {
