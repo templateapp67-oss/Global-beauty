@@ -84,6 +84,6 @@ class CompanionViewModel(app: Application) : AndroidViewModel(app) {
             getApplication<Application>().getSystemService(NotificationManager::class.java).cancelAll()
         }; "Signed out."
     }
-    fun deleteAccount()=action { repo.deleteAccount(); getApplication<Application>().getSystemService(NotificationManager::class.java).cancelAll(); if(firebaseAvailable) { FirebaseMessaging.getInstance().isAutoInitEnabled=false; FirebaseMessaging.getInstance().deleteToken().await() }; "Account deleted." }
+    fun deleteAccount()=action { repo.deleteAccount(); getApplication<Application>().getSystemService(NotificationManager::class.java).cancelAll(); if(firebaseAvailable) { FirebaseMessaging.getInstance().isAutoInitEnabled=false; FirebaseMessaging.getInstance().deleteToken().await() }; "Companion data deleted. Shared Studioflow account preserved." }
     fun screen(route:String){container.telemetry.screen(route)}
 }

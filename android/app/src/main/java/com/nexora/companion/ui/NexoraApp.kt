@@ -77,7 +77,16 @@ private fun TemplatesScreen(templates:List<Template>,details:(String)->Unit) {
     LazyColumn(contentPadding=PaddingValues(20.dp),verticalArrangement=Arrangement.spacedBy(16.dp)) {
         item { Text("A design for every kind of beauty.",style=MaterialTheme.typography.headlineMedium,fontWeight=FontWeight.Bold); Text("All 14 templates from Studioflow.") }
         item { OutlinedTextField(query,{query=it},label={Text("Search templates")},singleLine=true,modifier=Modifier.fillMaxWidth()) }
-        item { Column { listOf("all","hair","barber","beauty","nails","spa","ayurvedic","skin","tattoo").chunked(3).forEach { row -> Row(horizontalArrangement=Arrangement.spacedBy(8.dp)){row.forEach { c -> FilterChip(selected=category==c,onClick={category=c},label={Text(c.replaceFirstChar{it.uppercase()})}) }} };Text("${shown.size} templates",style=MaterialTheme.typography.labelMedium) }
+        item {
+            Column {
+                listOf("all","hair","barber","beauty","nails","spa","ayurvedic","skin","tattoo").chunked(3).forEach { row ->
+                    Row(horizontalArrangement=Arrangement.spacedBy(8.dp)) {
+                        row.forEach { c -> FilterChip(selected=category==c,onClick={category=c},label={Text(c.replaceFirstChar{it.uppercase()})}) }
+                    }
+                }
+                Text("${shown.size} templates",style=MaterialTheme.typography.labelMedium)
+            }
+        }
         items(shown,key={it.id}) { t -> ElevatedCard(onClick={details(t.id)}) { AsyncImage(t.image,"${t.name} cover",Modifier.fillMaxWidth().height(180.dp),contentScale=ContentScale.Crop);Column(Modifier.padding(18.dp),verticalArrangement=Arrangement.spacedBy(8.dp)){Text(t.name,style=MaterialTheme.typography.titleLarge,fontWeight=FontWeight.Bold);Text(t.tagline);Text(t.palette,style=MaterialTheme.typography.labelMedium);Text("View design details →",color=MaterialTheme.colorScheme.primary)} } }
         if(shown.isEmpty())item { Text("No matches. Try another name or category.") }
     }
@@ -142,9 +151,9 @@ private fun SettingsScreen(vm:CompanionViewModel,state:CompanionState,open:(Stri
         item { ConsentRow("Crash reporting","Send crash diagnostics to help fix app failures.",state.consent.crashes,vm.firebaseAvailable&&!state.busy){vm.consent(crashes=it)} }
         item { ConsentRow("Push notifications","Receive account updates on this device. Requires sign-in and Android permission.",state.consent.notifications,vm.firebaseAvailable&&state.session!=null&&!state.busy){enabled -> if(enabled&&Build.VERSION.SDK_INT>=33&&context.checkSelfPermission(Manifest.permission.POST_NOTIFICATIONS)!=PackageManager.PERMISSION_GRANTED)permission.launch(Manifest.permission.POST_NOTIFICATIONS) else vm.consent(notifications=enabled)} }
         item { TextButton(onClick={open(Links.HOME+"policies/?section=privacy-policy")}){Text("Privacy policy")};TextButton(onClick={open(Links.HOME+"contact/")}){Text("Support")};Text("Nexora Android 1.0.0 · Native companion",style=MaterialTheme.typography.labelSmall) }
-        if(state.session!=null)item { HorizontalDivider();TextButton(enabled=!state.busy,onClick={delete=true}){Text("Delete my account",color=MaterialTheme.colorScheme.error)} }
+        if(state.session!=null)item { HorizontalDivider();TextButton(enabled=!state.busy,onClick={delete=true}){Text("Delete companion data",color=MaterialTheme.colorScheme.error)} }
     }
-    if(delete)AlertDialog(onDismissRequest={delete=false},title={Text("Delete account permanently?")},text={Text("Your Nexora companion account, profile photos and private documents will be permanently deleted. This does not delete accounts on separate partner websites.")},confirmButton={TextButton(onClick={delete=false;vm.deleteAccount()}){Text("Delete permanently")}},dismissButton={TextButton(onClick={delete=false}){Text("Cancel")}})
+    if(delete)AlertDialog(onDismissRequest={delete=false},title={Text("Delete companion data?")},text={Text("Your companion profile, photos and private documents will be permanently deleted. Your shared Studioflow sign-in and salon business remain available.")},confirmButton={TextButton(onClick={delete=false;vm.deleteAccount()}){Text("Delete permanently")}},dismissButton={TextButton(onClick={delete=false}){Text("Cancel")}})
 }
 @Composable
 private fun ConsentRow(title:String,description:String,checked:Boolean,enabled:Boolean,onChange:(Boolean)->Unit) {

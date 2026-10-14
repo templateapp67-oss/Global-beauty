@@ -16,7 +16,7 @@ Deno.serve(async request=>{
    }
    return json(200,{ok:true});
   }
-  if(body.action==="delete_account") {
+  if(body.action==="delete_companion_data") {
    // Reauthentication required for account deletion; user-editable metadata is never used.
    if(!user.last_sign_in_at || Date.now()-Date.parse(user.last_sign_in_at)>10*60*1000)return json(403,{error:"Sign out and sign in again before deleting your account"});
    for(const bucket of ["nexora-mobile-photos","nexora-mobile-documents"]) {
@@ -27,8 +27,9 @@ Deno.serve(async request=>{
      if(batch===99)throw new Error("Deletion incomplete; retry required");
     }
    }
-   // Auth deletion cascades the profile/device rows; deleted JWTs then fail bucket policies.
-   await checked(await service(`/auth/v1/admin/users/${user.id}`,"DELETE"));
+   // Shared Studioflow Auth identity and business records must remain intact.
+   await checked(await service(`/rest/v1/nexora_mobile_devices?user_id=eq.${user.id}`,"DELETE"));
+   await checked(await service(`/rest/v1/nexora_mobile_profiles?user_id=eq.${user.id}`,"DELETE"));
    return json(200,{ok:true});
   }
   return json(400,{error:"Unsupported action"});

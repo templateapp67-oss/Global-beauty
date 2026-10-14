@@ -10,7 +10,8 @@ if (firebaseConfigured) {
     apply(plugin = "com.google.firebase.crashlytics")
 }
 val local = Properties().apply { rootProject.file("local.properties").takeIf { it.exists() }?.inputStream()?.use { load(it) } }
-fun config(name: String) = (System.getenv(name) ?: local.getProperty(name, "")).replace("\\", "\\\\").replace("\"", "\\\"")
+val backend = Properties().apply { rootProject.file("backend.properties").inputStream().use { load(it) } }
+fun config(name: String) = (System.getenv(name) ?: local.getProperty(name, backend.getProperty(name, ""))).replace("\\", "\\\\").replace("\"", "\\\"")
 android {
     namespace = "com.nexora.companion"
     compileSdk = 35

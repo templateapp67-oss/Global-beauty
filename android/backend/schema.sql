@@ -30,8 +30,8 @@ insert into storage.buckets (id,name,public,file_size_limit,allowed_mime_types) 
  ('nexora-mobile-photos','nexora-mobile-photos',false,5242880,array['image/jpeg','image/png','image/webp']),
  ('nexora-mobile-documents','nexora-mobile-documents',false,5242880,array['application/pdf','image/jpeg','image/png']);
 
--- A live profile must still exist: access tokens from deleted accounts cannot
--- keep accessing these buckets until JWT expiry. RLS applies to this subquery.
+-- A live profile must still exist: sessions without a companion profile cannot
+-- access these buckets. RLS applies to this subquery.
 create policy mobile_files_select on storage.objects for select to authenticated using (
  bucket_id in ('nexora-mobile-photos','nexora-mobile-documents') and (storage.foldername(name))[1]=(select auth.uid())::text
  and exists(select 1 from public.nexora_mobile_profiles p where p.user_id=(select auth.uid()))

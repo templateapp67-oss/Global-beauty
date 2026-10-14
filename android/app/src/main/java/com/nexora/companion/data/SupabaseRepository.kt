@@ -103,6 +103,6 @@ class SupabaseRepository(private val vault: SessionVault, private val installati
     }
     override suspend fun deleteDocument(path: String) { require(path.startsWith("${state.value?.userId}/")); authed("/storage/v1/object/nexora-mobile-documents", "DELETE", JSONObject().put("prefixes",JSONArray().put(path)).toString()) }
     override suspend fun registerDevice(token: String?) { authed("/functions/v1/companion-account", "POST", JSONObject().put("action","device").put("installation_id",installationId).put("token",token ?: JSONObject.NULL).toString()) }
-    override suspend fun deleteAccount() { authed("/functions/v1/companion-account", "POST", "{\"action\":\"delete_account\"}"); vault.clear(); state.value = null }
+    override suspend fun deleteAccount() { authed("/functions/v1/companion-account", "POST", "{\"action\":\"delete_companion_data\"}"); signOut() }
     private class AuthFailure : Exception("Authentication required")
 }

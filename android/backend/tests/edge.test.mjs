@@ -31,9 +31,9 @@ test('malformed device id cannot reach service-role operations',async()=>{
  let calls=0;const handle=handler('companion-account',async()=>{calls++;return Response.json({id:uid})});
  assert.equal((await handle(post({action:'device',installation_id:'bad&user_id=eq.other',token:null}))).status,400);assert.equal(calls,1);
 });
-test('account deletion requires recent verified sign-in',async()=>{
+test('companion data deletion requires recent verified sign-in',async()=>{
  let calls=0;const handle=handler('companion-account',async()=>{calls++;return Response.json({id:uid,last_sign_in_at:'2000-01-01T00:00:00Z'})});
- assert.equal((await handle(post({action:'delete_account'}))).status,403);assert.equal(calls,1);
+ assert.equal((await handle(post({action:'delete_companion_data'}))).status,403);assert.equal(calls,1);
 });
 test('push endpoint rejects user JWTs and never reaches FCM',async()=>{
  let calls=0;const handle=handler('send-push',async()=>{calls++;throw Error('must not fetch')});
@@ -42,4 +42,11 @@ test('push endpoint rejects user JWTs and never reaches FCM',async()=>{
 test('push validates recipient before reading tokens',async()=>{
  let calls=0;const handle=handler('send-push',async()=>{calls++;throw Error('must not fetch')});
  assert.equal((await handle(post({user_id:'not-a-uuid',title:'x',body:'y'},'Bearer test-dispatch-secret'))).status,400);assert.equal(calls,0);
+});
+
+test('companion deletion never deletes shared Auth or Studioflow records',async()=>{
+ const urls=[];const handle=handler('companion-account',async(url)=>{urls.push(url);return url.endsWith('/auth/v1/user')?Response.json({id:uid,last_sign_in_at:new Date().toISOString()}):Response.json([])});
+ assert.equal((await handle(post({action:'delete_companion_data'}))).status,200);
+ assert.ok(urls.some(u=>u.includes('/nexora_mobile_profiles?user_id=eq.'+uid)));
+ assert.ok(urls.every(u=>!u.includes('/auth/v1/admin')&&!u.includes('/studioflow_')));
 });
