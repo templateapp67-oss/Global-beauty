@@ -1,0 +1,1 @@
+{"private":true,"type":"module","scripts":{"test":"node --test tests/edge.test.mjs"},"devDependencies":{"esbuild":"0.25.0"}}

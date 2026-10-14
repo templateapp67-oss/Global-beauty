@@ -1,0 +1,6 @@
+[functions.companion-account]
+# Handles publishable keys and validates the bearer through Supabase Auth itself.
+verify_jwt = false
+[functions.send-push]
+# Server-only secret authentication inside the handler; never called by the app.
+verify_jwt = false

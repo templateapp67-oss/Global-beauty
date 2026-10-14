@@ -1,0 +1,4 @@
+# Copy to local.properties. Public/publishable key ONLY; never a service-role key.
+SUPABASE_URL=https://YOUR-PROJECT.supabase.co
+SUPABASE_PUBLISHABLE_KEY=YOUR-PUBLISHABLE-KEY
+# sdk.dir=/absolute/path/to/Android/Sdk
