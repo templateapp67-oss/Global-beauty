@@ -1,0 +1,2 @@
+import {pages} from '../../push/pages.mjs';
+export function GET(request:Request){const path=new URL(request.url).pathname.replace(/\/+$/,'')||'/';const html=(pages as Record<string,string>)[path];return new Response(html??'Page not found',{status:html?200:404,headers:{'Content-Type':'text/html; charset=utf-8','Cache-Control':'public, max-age=0, must-revalidate','X-Content-Type-Options':'nosniff'}});}
