@@ -1,0 +1,20 @@
+name: Web notification checks
+on:
+  push:
+    paths: ['push/**', 'public/push-client.js', 'public/firebase-messaging-sw.js', 'app/**', 'db/**', 'drizzle/**', 'backend/**', 'tests/**', '.github/workflows/web-notifications.yml']
+  pull_request:
+    paths: ['push/**', 'public/push-client.js', 'public/firebase-messaging-sw.js', 'app/**', 'db/**', 'drizzle/**', 'backend/**', 'tests/**', '.github/workflows/web-notifications.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  notification-tests:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: '24'
+      - name: Run notification regression tests
+        run: node --test tests/*.test.mjs

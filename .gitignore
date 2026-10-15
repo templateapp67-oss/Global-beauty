@@ -57,3 +57,6 @@ next-env.d.ts
 
 # Incremental TypeScript build cache
 *.tsbuildinfo
+
+# Only an empty configuration example may be tracked.
+!.env.example
